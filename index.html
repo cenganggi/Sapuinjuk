@@ -3,70 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjualan Sapu Injuk Ceng Anggi Cimuncang</title>
+    <title>Toko Sapu Injuk Tradisional Cimuncang</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background: linear-gradient(to bottom, #ffe259, #ffa751);
+            color: #333;
         }
         header {
-            background-color: #333;
+            background: #333;
             color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            letter-spacing: 2px;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
+            max-width: 1000px;
+            margin: 30px auto;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .product img {
-            max-width: 100%;
-            border-radius: 8px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         .product {
             text-align: center;
+            padding: 20px 0;
+            border-bottom: 3px solid #ffa751;
+        }
+        .product img {
+            max-width: 300px;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
         .product h1 {
             color: #333;
+            font-size: 32px;
+            margin-top: 15px;
+        }
+        .product p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #ff5722;
+            font-weight: bold;
+        }
+        .form-container {
+            margin-top: 20px;
         }
         .form-group {
             margin-bottom: 15px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
             font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 16px;
         }
         .form-group input, .form-group textarea, .form-group button {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 12px;
+            border: 2px solid #ffa751;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 100px;
         }
         .form-group button {
-            background-color: #333;
+            background: #ff5722;
             color: white;
-            border: none;
+            font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
         .form-group button:hover {
-            background-color: #555;
+            background: #e64a19;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+            background: #333;
+            padding: 15px 0;
+            font-size: 16px;
+        }
+        footer a {
+            color: #ffa751;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Toko Sapu Injuk Tradisional Cimuncangan</h1>
+        <h1>Toko Sapu Injuk Tradisional</h1>
     </header>
     <div class="container">
         <div class="product">
             <img src="sapu-injuk.jpg" alt="Sapu Injuk">
-            <h1>Sapu Injuk Asli</h1>
-            <p>Harga: Rp20.000 per buah</p>
-            <p>Sapu inj
+            <h1>Sapu Injuk Ceng Anggi</h1>
+            <p>Harga hanya <span class="highlight">Rp20.000</span> per buah!</p>
+            <p>Kuat, awet, dan 100% ramah lingkungan. Cocok untuk segala kebutuhan rumah tangga Anda!</p>
+        </div>
+        <div class="form-container">
+            <h2>Pesan Sekarang!</h2>
+            <form action="proses-pemesanan.php" method="post">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat Pengiriman</label>
+                    <textarea id="alamat" name="alamat" placeholder="Masukkan alamat lengkap Anda" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="jumlah">Jumlah Pesanan</label>
+                    <input type="number" id="jumlah" name="jumlah" min="1" placeholder="Masukkan jumlah pesanan" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Pesan Sekarang</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>Hubungi kami di <a href="tel:081234567890">0812-3456-7890</a></p>
+    </footer>
+</body>
+</html>
